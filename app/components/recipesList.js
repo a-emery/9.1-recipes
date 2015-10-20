@@ -2,13 +2,16 @@ import React from 'react';
 import _ from 'underscore';
 
 import store from '../store';
-import Recipe from './recipe'
+import Recipe from './recipe';
+import SearchResults from './searchResults';
 
 const RecipesList = React.createClass({
   propTypes: {
     recipes: React.PropTypes.object,
     search: React.PropTypes.string,
-    resetSearch: React.PropTypes.func
+    caseSensitiveSearchSubmit: React.PropTypes.string,
+    resetSearch: React.PropTypes.func,
+    activeSearch: React.PropTypes.bool
   },
 
   render() {
@@ -26,6 +29,8 @@ const RecipesList = React.createClass({
     if(recipes.length >0) {
     return (
       <div className="content">
+        <h1>Recipes</h1>
+        <div>{this.props.activeSearch && <SearchResults search={this.props.caseSensitiveSearchSubmit} resetSearch={this.props.resetSearch}/>}</div>
         <ul className="recipesList">
           {
             recipes.map((r) => <Recipe recipe={r} key={r.id} />)
@@ -36,8 +41,7 @@ const RecipesList = React.createClass({
   } else {
     return (
       <div className="content">
-        <h1>No recipes matched your search</h1>
-        <input type="submit" value="Return to Recipes List" onClick={this.props.resetSearch} />
+        <h1>{this.props.activeSearch && <SearchResults search={this.props.caseSensitiveSearchSubmit} resetSearch={this.props.resetSearch}/>}</h1>
       </div>
     )
   }

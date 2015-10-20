@@ -145,3 +145,8 @@ body {
 .content {
   margin: $header-height 0 0 $sidebar-width;
 }
+
+.searchResultsInfo {
+  display: inline-block;
+  margin-right: 10px;
+}

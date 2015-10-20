@@ -18,7 +18,8 @@ const RecipesView = React.createClass({
   getInitialState() {
     return {
       search: '',
-      updatedSearch: ''
+      updatedSearch: '',
+      activeSearch: false
     };
   },
 
@@ -33,19 +34,23 @@ const RecipesView = React.createClass({
 
   onChange(e) {
     this.setState({
-      search: e.target.value.toLowerCase()
+      search: e.target.value.toLowerCase(),
+      caseSensitiveSearch: e.target.value
     })
   },
 
   onSearchSubmit() {
     this.setState({
-      updatedSearch: this.state.search
+      updatedSearch: this.state.search,
+      caseSensitiveSearchSubmit: this.state.caseSensitiveSearch,
+      activeSearch: true
     })
   },
 
   resetSearch() {
     this.setState({
-      updatedSearch: ''
+      updatedSearch: '',
+      activeSearch: false
     })
   },
 
@@ -57,7 +62,9 @@ const RecipesView = React.createClass({
         <RecipesList
             recipes={recipes}
             search={this.state.updatedSearch}
+            caseSensitiveSearchSubmit={this.state.caseSensitiveSearchSubmit}
             resetSearch={this.resetSearch}
+            activeSearch={this.state.activeSearch}
         />
         <Sidebar
             onChange={this.onChange}
