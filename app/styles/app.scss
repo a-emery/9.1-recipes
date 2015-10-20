@@ -23,6 +23,10 @@ body {
   font-family: $base-font-family;
 }
 
+.contentWrapper {
+  margin-top: $header-height;
+}
+
 .nav {
   height: 50px;
   background: #5D6B76;

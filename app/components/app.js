@@ -7,43 +7,18 @@ import Sidebar from './sidebar';
 
 class App extends React.Component {
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      search: '',
-      sort: 'id',
-      order: 'asc'
-    };
-
-    _.bindAll(this, 'onSearch', 'onSort', 'onOrder');
-  }
-
-  onSearch() {
-
-  }
-
-  onSort() {
-
-  }
-
-  onOrder() {
-
-  }
-
   render() {
     return (
       <div>
         <Header />
-        <Sidebar />
-        <div className="content">
-          <RecipesList
-              onSearch={this.onSearch}
-          />
+        <div className="contentWrapper">
+          {this.props.children}
         </div>
       </div>
     )
   }
 }
+
+App.propTypes = {children: React.PropTypes.object}
 
 export default App

@@ -41,7 +41,6 @@ var Recipe = React.createClass({
   },
 
   render() {
-    // console.log(this.props.recipe)
 
     if (this.state.us) {
       return(
@@ -93,9 +92,9 @@ var Recipe = React.createClass({
               <input type="submit" value="Adjust Recipe" className="adjustmentSubmit" />
             </form>
             <h1>This is America, we use the Imperial system</h1>
-            <img src="../img/america.gif" alt="" className="americaImg" />
-            <img src="../img/hulk.gif" alt="" className="americaImg" />
-            <img src="../img/car.gif" alt="" className="americaImg" />
+            <img src="./img/america.gif" alt="" className="americaImg" />
+            <img src="./img/hulk.gif" alt="" className="americaImg" />
+            <img src="./img/car.gif" alt="" className="americaImg" />
             </div>
       )
     }

@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import React from 'react';
 
 var Header = React.createClass({
@@ -5,9 +6,9 @@ var Header = React.createClass({
     return (
         <nav className="nav">
           <ul>
-            <a href=""><li>Home</li></a>
-            <a href="#recipes"><li>Recipes List</li></a>
-            <li>Add Recipe</li>
+            <Link to="/"><li>Home</li></Link>
+            <Link to="/list"><li>Recipes List</li></Link>
+            <Link to="/modifyRecipe"><li>Add Recipe</li></Link>
           </ul>
         </nav>
     )
