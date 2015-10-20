@@ -1,5 +1,5 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE HTML>
+<html class="no-js" lang="en"{% if(o.htmlWebpackPlugin.files.manifest) { %} manifest="{%= o.htmlWebpackPlugin.files.manifest %}"{% } %}>
   <head>
     <meta charset="utf-8">
     <meta name="description" content="">
@@ -7,42 +7,16 @@
 
     <title></title>
 
-    <!-- build:css styles/vendor.min.css -->
-    <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/normalize.css/normalize.css" />
-    <!-- endbower -->
-    <!-- endbuild -->
+    {% if (o.htmlWebpackPlugin.files.favicon) { %}
+    <link rel="shortcut icon" href="{%=o.htmlWebpackPlugin.files.favicon%}">
+    {% } %}
 
-    <!-- build:css styles/app.min.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
-
-    <!-- build:js scripts/vendor/modernizr.min.js -->
-    <script src="bower_components/modernizr/modernizr.js"></script>
-    <!-- endbuild -->
+    <script src="{%=o.htmlWebpackPlugin.files.chunks['head'].entry %}"></script>
   </head>
   <body>
-    <div id="container"></div>
 
-  <!-- build:js scripts/vendor.min.js -->
-  <!-- bower:js -->
-  <script src="bower_components/jquery/dist/jquery.js"></script>
-  <script src="bower_components/underscore/underscore.js"></script>
-  <script src="bower_components/commonjs-require/commonjs-require.js"></script>
-  <script src="bower_components/react/react.js"></script>
-  <script src="bower_components/react/react-dom.js"></script>
-  <script src="bower_components/react-dom/react-dom.js"></script>
-  <script src="bower_components/backbone/backbone.js"></script>
-  <!-- endbower -->
-  <!-- endbuild -->
+    <div id="application"></div>
 
-  <!-- build:js scripts/app.min.js -->
-  <script src="scripts/app.js"></script>
-  <!-- endbuild -->
-
-  <script>
-    require('main');
-  </script>
-
-</body>
+    <script src="{%=o.htmlWebpackPlugin.files.chunks['app'].entry %}"></script>
+  </body>
 </html>
