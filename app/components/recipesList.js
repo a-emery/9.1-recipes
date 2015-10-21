@@ -26,11 +26,11 @@ const RecipesList = React.createClass({
       )
     });
 
-    if(recipes.length >0) {
+
     return (
       <div className="content">
         <h1>Recipes</h1>
-        <div>{this.props.activeSearch && <SearchResults search={this.props.caseSensitiveSearchSubmit} resetSearch={this.props.resetSearch}/>}</div>
+        <div>{this.props.activeSearch && <SearchResults search={this.props.caseSensitiveSearchSubmit} resetSearch={this.props.resetSearch} searchNumber={recipes.length}/>}</div>
         <ul className="recipesList">
           {
             recipes.map((r) => <Recipe recipe={r} key={r.id} />)
@@ -38,13 +38,7 @@ const RecipesList = React.createClass({
         </ul>
       </div>
     )
-  } else {
-    return (
-      <div className="content">
-        <h1>{this.props.activeSearch && <SearchResults search={this.props.caseSensitiveSearchSubmit} resetSearch={this.props.resetSearch}/>}</h1>
-      </div>
-    )
-  }
+
   },
 })
 

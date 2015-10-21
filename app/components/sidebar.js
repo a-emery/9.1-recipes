@@ -18,8 +18,10 @@ var Sidebar = React.createClass({
     return (
         <div className="sidebar">
           <ul>
-            <input type="text" placeholder="Search Recipes..." onKeyUp={this.props.onChange} />
-            <input type="submit" value="search" onClick={this.props.onSearchSubmit} />
+            <form>
+              <input type="search" placeholder="Search Recipes..." onKeyUp={this.props.onChange} />
+              <input type="submit" value="search" onClick={this.props.onSearchSubmit} />
+            </form>
           </ul>
         </div>
     )

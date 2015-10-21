@@ -43,7 +43,7 @@ const RecipesView = React.createClass({
     this.setState({
       updatedSearch: this.state.search,
       caseSensitiveSearchSubmit: this.state.caseSensitiveSearch,
-      activeSearch: true
+      activeSearch: true,
     })
   },
 
