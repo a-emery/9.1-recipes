@@ -23,7 +23,7 @@ const RecipesList = React.createClass({
         (typeof value == 'string' && value.trim().toLowerCase().indexOf(this.props.search) > -1)
       ) || _.any(recipe.ingredients, (ingredient) =>
       	ingredient.name.trim().toLowerCase().indexOf(this.props.search) > -1
-      )
+      );
     });
 
 
@@ -37,9 +37,9 @@ const RecipesList = React.createClass({
           }
         </ul>
       </div>
-    )
+    );
 
   },
-})
+});
 
 export default RecipesList;

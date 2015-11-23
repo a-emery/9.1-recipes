@@ -12,7 +12,7 @@ const RecipesView = React.createClass({
   getDefaultProps() {
     return {
       recipes: store.getRecipesCollection()
-    }
+    };
   },
 
   getInitialState() {
@@ -36,7 +36,7 @@ const RecipesView = React.createClass({
     this.setState({
       search: e.target.value.toLowerCase(),
       caseSensitiveSearch: e.target.value
-    })
+    });
   },
 
   onSearchSubmit() {
@@ -44,18 +44,18 @@ const RecipesView = React.createClass({
       updatedSearch: this.state.search,
       caseSensitiveSearchSubmit: this.state.caseSensitiveSearch,
       activeSearch: true,
-    })
+    });
   },
 
   resetSearch() {
     this.setState({
       updatedSearch: '',
       activeSearch: false
-    })
+    });
   },
 
   render() {
-    var recipes = this.props.recipes
+    var recipes = this.props.recipes;
 
     return (
       <div>
@@ -71,8 +71,8 @@ const RecipesView = React.createClass({
             onSearchSubmit={this.onSearchSubmit}
         />
       </div>
-    )
+    );
   }
-})
+});
 
-export default RecipesView
+export default RecipesView;

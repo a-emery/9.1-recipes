@@ -15,10 +15,10 @@ class App extends React.Component {
           {this.props.children}
         </div>
       </div>
-    )
+    );
   }
 }
 
-App.propTypes = {children: React.PropTypes.object}
+App.propTypes = {children: React.PropTypes.object};
 
-export default App
+export default App;

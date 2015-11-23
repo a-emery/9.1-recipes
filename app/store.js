@@ -2,7 +2,7 @@ import $ from 'jquery';
 import Backbone from 'backbone';
 import _ from 'underscore';
 
-let recipes
+let recipes;
 
 $.ajaxSetup({
   beforeSend(xhr, options) {

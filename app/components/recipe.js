@@ -25,19 +25,19 @@ var Recipe = React.createClass({
     e.preventDefault();
     this.setState({
       updatedServings: this.state.servings
-    })
+    });
   },
 
   usFunction() {
     this.setState({
       us: true
-    })
+    });
   },
 
   metricFunction() {
     this.setState({
       us: false
-    })
+    });
   },
 
   render() {
@@ -67,12 +67,12 @@ var Recipe = React.createClass({
                     <li key={_.uniqueId('Ingredient')}>
                       <p className="ingredientInfo"><input type="checkbox" />&nbsp;{this.state.updatedServings * i.qty} {i.unit} of {i.name}</p>
                     </li>
-                  )
+                  );
                 })
               }
           </ul>
         </div>
-      )
+      );
     } else {
       return(
         <div className="recipeContainer">
@@ -91,12 +91,9 @@ var Recipe = React.createClass({
               </div>
               <input type="submit" value="Adjust Recipe" className="adjustmentSubmit" />
             </form>
-            <h1>This is America, we use the Imperial system</h1>
-            <img src="./img/america.gif" alt="" className="americaImg" />
-            <img src="./img/hulk.gif" alt="" className="americaImg" />
-            <img src="./img/car.gif" alt="" className="americaImg" />
+            <h3>Sorry, metric values are not availablie, but the radio button works, so that's cool</h3>
             </div>
-      )
+      );
     }
   }
 });

@@ -6,7 +6,7 @@ var Home = React.createClass({
         <div>
           <h1>Home</h1>
         </div>
-    )
+    );
   }
 });
 

@@ -11,7 +11,7 @@ var Sidebar = React.createClass({
   getInitialState() {
     return {
       search: ''
-    }
+    };
   },
 
   render() {
@@ -24,7 +24,7 @@ var Sidebar = React.createClass({
             </form>
           </ul>
         </div>
-    )
+    );
   }
 });
 

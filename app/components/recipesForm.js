@@ -7,7 +7,7 @@ var RecipesForm = React.createClass({
           <input type="text" />
           <input type="text" />
         </div>
-    )
+    );
   }
 });
 

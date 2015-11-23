@@ -11,7 +11,7 @@ var Header = React.createClass({
             <Link to="/modifyRecipe"><li>Add Recipe</li></Link>
           </ul>
         </nav>
-    )
+    );
   }
 });
 
